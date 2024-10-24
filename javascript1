@@ -1,0 +1,18 @@
+<html lang="it" dir="ltr">
+    <head>
+        <meta charset="utf-8"> 
+        <title></title>
+        <!--<script src="file.js" charset="utf-8"></script>-->
+        <script>
+            var a; //var serve per dichiarare una variabile
+            a=2;
+            a="ciao";
+            a=true;
+            var a="3";
+            var b="2";
+
+            let b=2; //uguale a var ma si può usare solo 1 uNA volta
+            document.write ("<h1>ciao</h1>");
+        </script>
+    </head>
+</html>
