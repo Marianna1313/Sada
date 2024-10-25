@@ -1,0 +1,18 @@
+<html lang="it" dir="ltr">
+    <head>
+        <meta charset="utf-8"> 
+        <title>comand1 output</title>
+        <script type="text/javascript">
+            var nome="Venero";
+            var x= "2";
+            var y= "3";
+            x=parseInt(x); //per far si che non legga la variabile come stringa, altrimenti non farebbe la somma
+            y=parseInt(y);
+            alert ("Il numero " + x + " per il valore " + y + " risulta " + (x*y));
+            alert (x+y);
+            x=parseInt(prompt ("inserisci un numero: "));
+            
+            document.write ("<h1>"+nome+"</h1>");
+        </script>
+    </head>
+</html>
