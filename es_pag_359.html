@@ -17,7 +17,12 @@
                 d= prompt ("inserisci descrizione nuovo componente ")
                 p= prompt ("inserisci prezzo unitario per " +d)
                 n= prompt ("inserisci numero articoli per " +d)
-                document.write (d"")
+                document.write (d+"<td></td>")
+                document.write (p+"<td></td>")
+                document.write (n+"<td></td>")
+                document.write ((n * p)+"</td>")
+                document.write ("</tr>")
+                tot=n*p;
         }
         </script>
     </body>

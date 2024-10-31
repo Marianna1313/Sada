@@ -1,0 +1,31 @@
+<html lang="it" dir="ltr">
+    <head>
+        <meta charset="utf-8"> 
+        <title></title>
+        <script>
+            var vettore=[];
+            vettore[0]="Ciao";
+            vettore[1]=true;
+            vettore[2]=12;
+            vettore[5]="<br>";
+            vettore[6]=35;
+            
+            var vet2=[1,5,9,7,3];
+            for (var i=0; i<vettore.length;i++){//length serve per vedere l'ultimo indice del vettore
+                document.write(vettore[i]+" ");
+            }
+            //alert(vettore(length))//per fare vedere quanto è lungo il vettore
+            vettore.splice(0,1,2,"mondo", false);//serve cambiare i valori dentro gli indici
+            for (var i=0; i<vettore.length;i++){//length serve per vedere l'ultimo indice del vettore
+                document.write(vettore[i]+" ");
+            }
+            for (i in vettore){//prende solo gli indici dell'array che hanno degli elementi che ho assegnato 
+                document.write(vettore[i]+" ");
+            }
+            var tampone;//pesca i valori diretti e non gli indici
+            for (tampone of vettore){
+                document.write(tampone+" ");
+            }
+        </script>
+    </head>
+</html>
