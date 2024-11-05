@@ -5,13 +5,15 @@
     <body>
         <h1>Catalogo</h1>
         <script>
-        //var pianta= { nome, foto, quantita };
-        var img1=
-        var nome=["Girasole", "Ciclamino", "Orchidea"];
-        var foto=[img1]
-        var quantita=[13, 46, 8];
-        for (var i in nome)
-        }
+            var v=0, i=0;;
+            var piante= ["Rosmarino", "Ciclamino", "Girasole"];
+            var quantita = [47, 76, 13];
+            document.write ("<table border=13>");
+            for (v of piante){
+                document.write ("<tr><td>" + v + "</td><td><img width='130' height='170' src='immagini_piante/"+v+".jpg' >" + "</td><td>" + quantita[i] + "<tr><td>" );
+                i=i+1;
+                }
+            document.write ("</table>");
         </script>
     </body>
 </html>
