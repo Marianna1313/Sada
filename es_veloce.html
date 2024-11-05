@@ -11,17 +11,20 @@
                 document.write (ar[i]+ " ");
             }
             var val=0;
-            /*for (val of ar){
+            for (val of ar){
                 document.write ("<br>"+ val+ " ");
-            }*/
-            document.write ("<table>");
-            for (val of animale){
-                document.write ("<tr><td>" + value+ "</td><td> <img src='"value" immagini_animali/cane.jpg.jpg">' +"<tr><td>" )
             }
-            document.write ("<table>")
+            var v=0;
+            var animale= ["cane", "gatto"];
+            document.write ("<table border=13>");
+            for (v of animale){
+                document.write ("<tr><td>" + v + "</td><td><img src='immagini_animali/"+v+".jpg'>" + "<tr><td>" )
+            }
+            document.write ("</table>");
+            /*document.write ("<table>")
             document.write ("<tr><td>")
             document.write ("<td>"+ '<img src="immagini_animali/cane.jpg.jpg">' +"<tr><td>" );
-            document.write ("<td>"+ '<img src="immagini_animali/gatto.jpg.jpg">' +"<tr><td>" );
+            document.write ("<td>"+ '<img src="immagini_animali/gatto.jpg.jpg">' +"<tr><td>" );*/
         </script>
     </body>
 </html>
