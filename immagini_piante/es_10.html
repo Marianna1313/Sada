@@ -1,11 +1,36 @@
 <html lang="it" dir="ltr">
     <head>
         <meta charset="utf-8"> 
-        <title></title>
+        <title>Rubrica</title>
+    </head>
+    <body>
+        <h1>Rubrica</h1>
         <script>
             var contatti=["Maria", "Giacomo", "Luisa", "Leonardo", "Roberto" , "Paola"];
-            var i=0;
-            alert(contatti);
+            var i=0, v=0;
+            for (i of contatti){
+                document.write(i+"</br>");
+            }
+            contatti[contatti.length]=prompt("inserisci un nome");
+            alert (contatti);
+            v=prompt("inserisci il numero del contatto che vuoi modificare");
+            contatti.splice(1, 1, prompt("Con che nome vuoi modificare il contatto?"));
+            alert (contatti);
+            m=prompt("inserisci il numero del contatto che vuoi eliminare");
+            contatti1=contatti.slice(0;m-1);
+            /*for (i of contatti){
+                if (i==v){
+                    contatti[i]=prompt("Con che nome vuoi modificare il contatto?");
+                }
+            }
+            m=prompt("inserisci il numero del contatto che vuoi eliminare");
+            for (i of contatti){
+                if (i==m){
+                    contatti[i]=prompt("Con che nome vuoi modificare il contatto?");
+                }
+            }*/
         </script>
-    </head>
+    </body>
 </html>
+
+vett=vet\.concat(vet2)
