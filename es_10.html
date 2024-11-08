@@ -14,10 +14,13 @@
             contatti[contatti.length]=prompt("inserisci un nome");
             alert (contatti);
             v=prompt("inserisci il numero del contatto che vuoi modificare");
-            contatti.splice(1, 1, prompt("Con che nome vuoi modificare il contatto?"));
+            contatti.splice(v, 1, prompt("Con che nome vuoi modificare il contatto?"));
             alert (contatti);
             m=prompt("inserisci il numero del contatto che vuoi eliminare");
-            contatti1=contatti.slice(0;m-1);
+            contatti1=contatti.slice(0,m-1);
+            contatti2=contatti.slice(m+1,contatti.lenght);
+            contatti=contatti1.concat(contatti2);
+            alert (contatti);
             /*for (i of contatti){
                 if (i==v){
                     contatti[i]=prompt("Con che nome vuoi modificare il contatto?");
