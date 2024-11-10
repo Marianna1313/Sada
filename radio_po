@@ -1,0 +1,39 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+class radiolina {
+    protected:
+    int volume;
+    bool stato;
+    float frequenza;
+    public:
+    Costruttore(){
+        volume=5;
+        stato=true;
+        frequenza=87.5;
+    }
+    bool Onoff(){
+
+    }
+    void ascolta(){
+        if (stato==true){
+            cout<<"Il canale è " << frequenza << " e il volume è " << volume;
+        } else{
+            cout<< "La radio è spenta";
+        }
+    }
+    int vol(char v){
+        volume=volume+v;
+    }
+};
+
+int main(){
+    char v;
+    cout<<"Di quanto vuoi alzare il volume? ";
+    cin >> v;
+    while (v>10||v<0){
+        cout<<"inserisci di nuovo, dev'essere minore di dieci e maggiore di 0: ";
+        cin>>v;
+    }
+}

@@ -1,4 +1,4 @@
-<html lang="it" dir="ltr">
+<!--<html lang="it" dir="ltr">
     <head>
         <meta charset="utf-8"> 
         <title>Somma</title>
@@ -6,17 +6,48 @@
     <body>
         <h1>Somma</h1>
         <script>
-            var ar;
             function somma(){
                 var s=0;
-                var i=0;
+                var i;
                 for (i in arguments){
                     s=s+arguments[i];
                 }
                 return s;
+                
             }
-            <button type="button" onclick="somma(5,6)">Somma</button>;
-            <a href=
+            
         </script>
+        <button type="button" onclick="somma(5,6)">Somma</button>
+        <a href="javascript:somma(5,6)">CLICCAMI</a>
+    </body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+    <head>
+        <meta charset="utf-8"> 
+        <title>Somma</title>
+    </head>
+    <body>
+        <h1>Somma</h1>
+        
+        
+        <div id="risultato"></div>
+        
+        <script>
+            function somma() {
+                let s = 0;
+                for (let i = 0; i < arguments.length; i++) {
+                    s += arguments[i];
+                }
+                
+                document.getElementById("risultato").innerText = "Risultato: " + s;
+                return s;
+            }
+        </script>
+        
+        
+        <button type="button" onclick="somma(5,6)">Somma 5 e 6</button>
+        <a href="javascript:somma(5,6)">CLICCAMI</a>
     </body>
 </html>
