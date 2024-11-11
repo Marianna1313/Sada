@@ -6,7 +6,6 @@
         <h1>Calcolatrice</h1>
         <script>
         function dumpo(){
-        //var vedi=7
     }
         function somma(){
             var s1=0
@@ -14,7 +13,6 @@
             var tot=0
            s1=parseInt(document.getElementById("numero1").value)
            s2=parseInt(document.getElementById("numero2").value)
-           //alert(s1+s2)
            document.getElementById("risultato").value = s1+s2
         }
         function sottrazione(){
@@ -23,7 +21,6 @@
             var tot=0
            sot1=parseInt(document.getElementById("numero1").value)
            sot2=parseInt(document.getElementById("numero2").value)
-           //alert(s1+s2)
            document.getElementById("risultato").value = sot1-sot2
         }
         function moltiplicazione(){
@@ -32,7 +29,6 @@
             var tot=0
            m1=parseInt(document.getElementById("numero1").value)
            m2=parseInt(document.getElementById("numero2").value)
-           //alert(s1+s2)
            document.getElementById("risultato").value = m1*m2
         }
         function divisione(){
@@ -41,29 +37,20 @@
             var tot=0
            d1=parseInt(document.getElementById("numero1").value)
            d2=parseInt(document.getElementById("numero2").value)
-           //alert(s1+s2)
            document.getElementById("risultato").value = d1/d2
         }
-        /*function sommanumericaselleditesto(){
-            var s1=0
-            var s2=0
-            var tot=0
-           s1=parseInt(document.getElementById("numero1").value)
-           s2=parseInt(document.getElementById("numero2").value)
-           alert(s1+s2)
-           document.getElementById("risultato").value = s1+s2
-        }*/
+      
  
     </script>
 <body>
  
 Numero 1<input type="text" id="numero1">
 Numero 2<input type="text" id="numero2">
-<p></p>Risultato<input type="text" id="risultato"></p>
-<button type=button onclick="somma()">+</button>
+<p><button type=button onclick="somma()">+</button>
 <button type=button onclick="sottrazione()">-</button>
 <button type=button onclick="moltiplicazione()">*</button>
-<button type=button onclick="divisione()">/</button>
+<button type=button onclick="divisione()">/</button></p>
+<p></p>Risultato<input type="text" id="risultato"></p>
  
     </body>
 </html>
