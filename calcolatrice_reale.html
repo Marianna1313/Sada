@@ -1,0 +1,104 @@
+<html lang="it" dir="ltr">
+    <head>
+        <meta charset="utf-8"> 
+        <title>Calcolatrice</title>
+    </head>
+        <h1>Calcolatrice</h1>
+        <script>
+            var num=[]
+            var segni=[]
+            
+        function numerocaselle(x){
+            value=document.getElementById("x").value
+            value=value+x;
+            parseInt(document.getElementById("x").value=value)
+            
+        }
+        function piu(){
+            num[num.length]=parseInt(document.getElementById("x").value)
+            segni[segni.length]='+'
+            parseInt(document.getElementById("x").value="")
+            
+        }
+        function meno(){
+            num[num.length]=parseInt(document.getElementById("x").value)
+            segni[segni.length]='-'
+            parseInt(document.getElementById("x").value="")
+            
+        }
+        function diviso(){
+            num[num.length]=parseInt(document.getElementById("x").value)
+            segni[segni.length]='/'
+            parseInt(document.getElementById("x").value="")
+            
+        }function per(){
+            
+            num[num.length]=parseInt(document.getElementById("x").value)
+            segni[segni.length]='*'
+            parseInt(document.getElementById("x").value="")
+            
+        }
+        
+        
+        function uguale(){
+            
+            num[num.length]=parseInt(document.getElementById("x").value)
+            
+                
+            
+            
+            /*if(segni.lenght==0){
+                alert("non ci sono operazioni")
+            }*/
+            var tot=num[0];
+            for (var i=1; i<=num.length; i++){
+                if (segni[i-1]=='+'){
+                    tot=tot+num[i]
+                }
+                else if (segni[i-1]=='-'){
+                    tot=tot-num[i]
+                }
+                else if (segni[i-1]=='*'){
+                    tot=tot*num[i]
+                }
+                else if (segni[i-1]=='/'){
+                    tot=tot/num[i]
+                }
+                
+            }
+            parseInt(document.getElementById("x").value=tot)
+        }
+
+        function cancellare()
+        {
+            num = []
+            segni = []
+            parseInt(document.getElementById("x").value="")
+        }
+ 
+    </script>
+<body>
+ 
+<input type="text" id="x">
+
+
+<p> <button type=button onclick="numerocaselle(7)">7</button>
+    <button type=button onclick="numerocaselle(8)">8</button>
+    <button type=button onclick="numerocaselle(9)">9</button>
+    <button type=button onclick="diviso()">/</button></p>
+<p> <button type=button onclick="numerocaselle(4)">4</button>
+    <button type=button onclick="numerocaselle(5)">5</button>
+    <button type=button onclick="numerocaselle(6)">6</button>
+    <button type=button onclick="per()">*</button></p>
+<p> <button type=button onclick="numerocaselle(1)">1</button>
+    <button type=button onclick="numerocaselle(2)">2</button>
+    <button type=button onclick="numerocaselle(3)">3</button>
+    <button type=button onclick="meno()">-</button></p>
+<p> <button type=button onclick="uguale()">=</button>
+    <button type=button onclick="numerocaselle(0)">0</button>
+    <button type=button onclick="cancellare()">AC</button>
+    <button type=button onclick="piu()">+</button></p>
+
+ 
+    </body>
+</html>
