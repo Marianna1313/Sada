@@ -5,8 +5,22 @@
     </head>
         <h1>Calcolatrice</h1>
         <script>
-            
+            var num=[]
+            var segni=[]
+
+        function numerocaselle(x){
+            parseInt(document.getElementById("x").value=x)
+        }
+            var num=[]
+            var segni=[]
         function somma(){
+            for (var i=0;i<num.lenght;i++){
+                num[i]=parseInt(document.getElementById("").value)
+            }
+            for (var i=0;i<segno.lenght;i++){
+                segno[i]=parseInt(document.getElementById("").value)
+            }
+            
             var s1=0
             var s2=0
             var tot=0
@@ -43,13 +57,20 @@
     </script>
 <body>
  
-Numero 1<input type="text" id="numero1">
-Numero 2<input type="text" id="numero2">
+<input type="text" id="x">
 <p><button type=button onclick="somma()">+</button>
 <button type=button onclick="sottrazione()">-</button>
 <button type=button onclick="moltiplicazione()">*</button>
 <button type=button onclick="divisione()">/</button></p>
-<p></p>Risultato<input type="text" id="risultato"></p>
+<p><button type=button onclick="numerocaselle(1)">1</button>
+<button type=button onclick="numerocaselle(2)">2</button>
+<button type=button onclick="numerocaselle(3)">3</button></p>
+<button type=button onclick="numerocaselle(4)">4</button></p>
+<p><button type=button onclick="numerocaselle(5)">5</button>
+    <button type=button onclick="numerocaselle(6)">6</button>
+    <button type=button onclick="numerocaselle(7)">7</button>
+    <button type=button onclick="numerocaselle(8)">8</button></p>
+
  
     </body>
 </html>
