@@ -1,0 +1,14 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+class Dipendente {
+    protected:
+    string nome;
+    double stipendioBase;
+};
+
+
+int main(){
+    
+}
