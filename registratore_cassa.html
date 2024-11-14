@@ -6,14 +6,32 @@
     <body>
         <h1>Registratore di cassa</h1>
         <script>
+                /*var tot
+                tot= prezzi[x]*quantita*/
             var prodotti=[mele, carote, noci, philadelphia, nascondini]
-            var quantita=0;
+            var prezzi=[2.50, 1, 5, 2, 1.50]
+            var quantita=0, tot=0
+           
 
-            function immagine(){
-
+            function seleziona(x){
+                var tot
+                tot= tot + (prezzi[x]*quantita)
+                document.getElementbyId("scontrino").value=prodotti[x]+quantita+prezzi[x]
             }
-        </script>
-            <h1>PRODOTTI</h1>
             
+        
+        </script>
+        <p><img width='140' height='140' src="immagini_registratore/carote.jpg" onclick="seleziona(1)"></br>
+        <img width='140' height='140' src="immagini_registratore/mele.jpg" onclick="seleziona(0)"></br>
+        <img width='140' height='140' src="immagini_registratore/nascondini.jpg" onclick="seleziona(4)"></br>
+        <img width='150' height='150' src="immagini_registratore/noci.jpg" onclick="seleziona(2)"></br>
+        <img width='140' height='140' src="immagini_registratore/philadelphia.jpg" onclick="seleziona(3)"></p>
+         <p>Quantità<input type="text" id="quantità"></p>
+         <p><button type=button onclick="cancella()">CANC</button></p>
+            <h1>Scontrino</h1>
+            <p><textarea id="scontrino" name="scontrino" rows="40" cols="30"></textarea></p>
+            <p>Totale<input type="text" id="totale"></p>
+            <p>Totale con IVA<input type="text" id="totale_iva"></p>
+            <p><button type=button onclick="fine()">FINE SPESA</button></p>
     </body>
 </html>
