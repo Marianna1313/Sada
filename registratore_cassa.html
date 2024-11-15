@@ -2,6 +2,12 @@
     <head>
         <meta charset="utf-8"> 
         <title>Registratore di cassa</title>
+        <style>
+            div{
+                width:20%;
+                display:inline-block;
+            }
+        </style>
     </head>
     <body>
         <h1>Registratore di cassa</h1>
@@ -9,10 +15,10 @@
                 /*var tot
                 tot= prezzi[x]*quantita*/
             var prodotti=[mele, carote, noci, philadelphia, nascondini]
-            var prezzi=[2.50, 1, 5, 2, 1.50]
+            var prezzi=[2.50, 1, 5, 2, 3.50]
             var quantita=0, tot=0
            
-
+            quantita=parseInt(document.getElementById("quantità").value)
             function seleziona(x){
                 var tot
                 tot= tot + (prezzi[x]*quantita)
@@ -21,17 +27,31 @@
             
         
         </script>
-        <p><img width='140' height='140' src="immagini_registratore/carote.jpg" onclick="seleziona(1)"></br>
+        <div>  <a href="javascript:seleziona(0)"> <img width='140' height='140' src="immagini_registratore/carote.jpg"></a></br>
+            Carote: 2.50€</br>
+            <a href="javascript:seleziona(1)"> <img width='140' height='140' src="immagini_registratore/mele.jpg"></a></br>
+            Mele: 1€</br>
+            <a href="javascript:seleziona(2)"> <img width='140' height='140' src="immagini_registratore/noci.jpg"></a></br>
+            Noci: 5€</br>
+            <a href="javascript:seleziona(3)"> <img width='140' height='140' src="immagini_registratore/philadelphia.jpg"></a></br>
+            Philadelphia: 2€</br>
+            <a href="javascript:seleziona(4)"> <img width='140' height='140' src="immagini_registratore/nascondini.jpg"></a> </br>
+            Nascondini: 3.50€</br></div>
+        <!--<p><img width='140' height='140' src="immagini_registratore/carote.jpg" onclick="seleziona(1)"></br>
         <img width='140' height='140' src="immagini_registratore/mele.jpg" onclick="seleziona(0)"></br>
         <img width='140' height='140' src="immagini_registratore/nascondini.jpg" onclick="seleziona(4)"></br>
         <img width='150' height='150' src="immagini_registratore/noci.jpg" onclick="seleziona(2)"></br>
-        <img width='140' height='140' src="immagini_registratore/philadelphia.jpg" onclick="seleziona(3)"></p>
-         <p>Quantità<input type="text" id="quantità"></p>
-         <p><button type=button onclick="cancella()">CANC</button></p>
-            <h1>Scontrino</h1>
-            <p><textarea id="scontrino" name="scontrino" rows="40" cols="30"></textarea></p>
-            <p>Totale<input type="text" id="totale"></p>
-            <p>Totale con IVA<input type="text" id="totale_iva"></p>
-            <p><button type=button onclick="fine()">FINE SPESA</button></p>
+        <img width='140' height='140' src="immagini_registratore/philadelphia.jpg" onclick="seleziona(3)"></p>-->
+         <div>Quantità<input type="text" id="quantità"></p>
+         <p><button type=button onclick="cancella()">CANC</button></div>
+        <div>   <h1>Scontrino</h1>
+            <textarea id="scontrino" name="scontrino" rows="40" cols="30"></textarea></div> 
+            <div><h1>Totale</h1> <hr>
+            Totale: <a href="javascript:funzione()"></a></br>
+            Totale con IVA: <a href="javascript:funzione()"></a></br>
+            <button type=button onclick="fine()">FINE SPESA</button></div> 
+
+
+        
     </body>
 </html>
