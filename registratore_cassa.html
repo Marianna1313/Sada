@@ -14,16 +14,34 @@
         <script>
                 /*var tot
                 tot= prezzi[x]*quantita*/
-            var prodotti=[mele, carote, noci, philadelphia, nascondini]
+            var prodotti=["mele", "carote", "noci", "philadelphia", "nascondini"]
             var prezzi=[2.50, 1, 5, 2, 3.50]
-            var quantita=0, tot=0
+            var quantita=0, tot=0, x
            
-            quantita=parseInt(document.getElementById("quantità").value)
+            
             function seleziona(x){
-                var tot
+                quantita=parseInt(document.getElementById("quantità").value)
                 tot= tot + (prezzi[x]*quantita)
-                document.getElementbyId("scontrino").value=prodotti[x]+quantita+prezzi[x]
+                //document.getElementById("scontrino").value=prodotti[x]+quantita+prezzi[x]
+                document.getElementById("scontrino").value = prodotti[x] + " x" + quantita + " - " + prezzi[x] + "€\n";
             }
+           /*var i=0
+           function seleziona(x){
+                quantita=parseInt(document.getElementById("quantità").value)
+                tot= tot + (prezzi[x]*quantita)
+                for (i in arguments){
+                    document.getElementById("scontrino").value = prodotti[x] + " x" + quantita + " - " + prezzi[x] + "€\n";
+                }
+                
+            }*/
+            function cancella(){
+                document.getElementById("quantità").value = " "
+            }
+
+            function totale(){
+                document.write ('tot')
+            }
+            
             
         
         </script>
@@ -47,7 +65,7 @@
         <div>   <h1>Scontrino</h1>
             <textarea id="scontrino" name="scontrino" rows="40" cols="30"></textarea></div> 
             <div><h1>Totale</h1> <hr>
-            Totale: <a href="javascript:funzione()"></a></br>
+            Totale: <a href="javascript:totale()"></a></br>
             Totale con IVA: <a href="javascript:funzione()"></a></br>
             <button type=button onclick="fine()">FINE SPESA</button></div> 
 
