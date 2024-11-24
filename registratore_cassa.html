@@ -12,9 +12,8 @@
     <body>
         <h1>Registratore di cassa</h1>
         <script>
-                /*var tot
-                tot= prezzi[x]*quantita*/
-            var prodotti=["mele", "carote", "noci", "philadelphia", "nascondini"]
+                
+            var prodotti=["carote", "mele", "noci", "philadelphia", "nascondini"]
             var prezzi=[2.50, 1, 5, 2, 3.50]
             var quantita=0, tot=0, x
            
@@ -23,33 +22,22 @@
                 quantita=parseInt(document.getElementById("quantità").value)
                 tot= tot + (prezzi[x]*quantita)
                 //document.getElementById("scontrino").value=prodotti[x]+quantita+prezzi[x]
-                //document.getElementById("scontrino").value = prodotti[x] + " x" + quantita + " - " + prezzi[x] + "€\n";
-                document.getElementById("scontrino").value = prodotti[x] + " x" + quantita + " - " + (prezzi[x] * quantita).toFixed(2) + "€\n";
-
-                //parseInt(document.getElementById("totale").value=tot)
-                document.getElementById("totale").value = tot.toFixed(2);
+                document.getElementById("scontrino").value = document.getElementById("scontrino").value + prodotti[x] + " x" + quantita + " - " + prezzi[x] + "€\n";
+                
+                parseInt(document.getElementById("totale").value=tot)
+                
                 var iva= tot*0.22
-                //parseInt(document.getElementById("totaleIVA").value=tot+iva)
-                document.getElementById("totaleIVA").value = (tot + iva).toFixed(2);
+                parseInt(document.getElementById("totaleIVA").value=tot+iva)
+                
             }
 
-
-            
-           /*var i=0
-           function seleziona(x){
-                quantita=parseInt(document.getElementById("quantità").value)
-                tot= tot + (prezzi[x]*quantita)
-                for (i in arguments){
-                    document.getElementById("scontrino").value = prodotti[x] + " x" + quantita + " - " + prezzi[x] + "€\n";
-                }
-                
-            }*/
             function cancella(){
                 document.getElementById("quantità").value = " "
             }
 
             function fine(){
-                
+                alert("Pagamento in corso...\nAlla prossima!"
+                )
             
             }
         
