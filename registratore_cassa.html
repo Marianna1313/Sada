@@ -23,8 +23,18 @@
                 quantita=parseInt(document.getElementById("quantità").value)
                 tot= tot + (prezzi[x]*quantita)
                 //document.getElementById("scontrino").value=prodotti[x]+quantita+prezzi[x]
-                document.getElementById("scontrino").value = prodotti[x] + " x" + quantita + " - " + prezzi[x] + "€\n";
+                //document.getElementById("scontrino").value = prodotti[x] + " x" + quantita + " - " + prezzi[x] + "€\n";
+                document.getElementById("scontrino").value = prodotti[x] + " x" + quantita + " - " + (prezzi[x] * quantita).toFixed(2) + "€\n";
+
+                //parseInt(document.getElementById("totale").value=tot)
+                document.getElementById("totale").value = tot.toFixed(2);
+                var iva= tot*0.22
+                //parseInt(document.getElementById("totaleIVA").value=tot+iva)
+                document.getElementById("totaleIVA").value = (tot + iva).toFixed(2);
             }
+
+
+            
            /*var i=0
            function seleziona(x){
                 quantita=parseInt(document.getElementById("quantità").value)
@@ -38,11 +48,10 @@
                 document.getElementById("quantità").value = " "
             }
 
-            function totale(){
-                document.write ('tot')
+            function fine(){
+                
+            
             }
-            
-            
         
         </script>
         <div>  <a href="javascript:seleziona(0)"> <img width='140' height='140' src="immagini_registratore/carote.jpg"></a></br>
@@ -55,18 +64,14 @@
             Philadelphia: 2€</br>
             <a href="javascript:seleziona(4)"> <img width='140' height='140' src="immagini_registratore/nascondini.jpg"></a> </br>
             Nascondini: 3.50€</br></div>
-        <!--<p><img width='140' height='140' src="immagini_registratore/carote.jpg" onclick="seleziona(1)"></br>
-        <img width='140' height='140' src="immagini_registratore/mele.jpg" onclick="seleziona(0)"></br>
-        <img width='140' height='140' src="immagini_registratore/nascondini.jpg" onclick="seleziona(4)"></br>
-        <img width='150' height='150' src="immagini_registratore/noci.jpg" onclick="seleziona(2)"></br>
-        <img width='140' height='140' src="immagini_registratore/philadelphia.jpg" onclick="seleziona(3)"></p>-->
+        
          <div>Quantità<input type="text" id="quantità"></p>
          <p><button type=button onclick="cancella()">CANC</button></div>
         <div>   <h1>Scontrino</h1>
             <textarea id="scontrino" name="scontrino" rows="40" cols="30"></textarea></div> 
             <div><h1>Totale</h1> <hr>
-            Totale: <a href="javascript:totale()"></a></br>
-            Totale con IVA: <a href="javascript:funzione()"></a></br>
+            Totale: <input type="text" id="totale"></br>
+            Totale con IVA (22%): <input type="text" id="totaleIVA"></a></br>
             <button type=button onclick="fine()">FINE SPESA</button></div> 
 
 
