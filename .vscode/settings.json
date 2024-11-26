@@ -1,3 +1,6 @@
 {
-    "livePreview.defaultPreviewPath": "/calcolatrice_reale.html"
+    "livePreview.defaultPreviewPath": "/calcolatrice_reale.html",
+    "files.associations": {
+        "iostream": "cpp"
+    }
 }
