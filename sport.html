@@ -1,8 +1,8 @@
 <html lang="it" dir="ltr">
     <head>
         <meta charset="utf-8"> 
-        <title>Registratore di cassa</title>
-        <h1>Registratore di cassa</h1>
+        <title>Calorie sport</title>
+        <h1>Calorie Sport</h1>
         <style>
             div{
                 width:20%;
@@ -11,17 +11,18 @@
         </style>
     </head>
     <body>
-        <p> <img id='immagine' width='140' height='140' src=''> </p>
+        <p> <a href="javascript:vedi()"> <img id="immagine" width='140' height='140' src=""></a>
+            
         <div>  
         
          <div>Quantità<input type="text" id="quantità"></p>
-         <p><button type=button onclick="cancella()">CANC</button></div>
+         <p><button type=button onclick="cancella()">Azzera Registro</button></div>
         <div>   <h1>Scontrino</h1>
             <textarea id="scontrino" name="scontrino" rows="40" cols="30"></textarea></div> 
             <div><h1>Totale</h1> <hr>
             Totale: <input type="text" id="totale"></br>
             Totale con IVA (22%): <input type="text" id="totaleIVA"></a></br>
-            <button type=button onclick="fine()">FINE SPESA</button></div> 
+            <button type=button oncli
 
 
         
@@ -32,12 +33,16 @@
             var sport=["Scherma"]
             var imm=[ "https://www.poliziadistato.it/statics/17/pagina-scherma-550.jpg?art=1"]
             var cal= [9]
-            var quantita=0, tot=0, x
+            
+        
            
-            document.getElementById("immagine").innerHTML = imm[0]
-            for (i in arguments){
-                document.write()
-            }
+            
+                var i=0
+            for (i in imm)
+                document.getElementById("immagine").src = imm[i]
+                
+            
+        
             
             /*function seleziona(x){
                 quantita=parseInt(document.getElementById("quantità").value)
