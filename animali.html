@@ -8,20 +8,47 @@
     <body>
         <h1>Indovina l'animale</h1>
         <script>
-
+            var indice = 0
             var anim=["Giraffa", "Delfino", "Pecora", "Scimmia", "Volpe"]
-            var imm=['animali_img/giraffa.png']
-            //imm[0].src='animali_img/giraffa.png'
-            //var i=0;
+            var imm=["./animali_img/giraffa.png","./animali_img/delfino.png","./animali_img/pecora.png","./animali_img/scimmia.png","./animali_img/volpe.png"]
+            //imm[0]=''
+            var i=0, punteggio=0;
 
-            document.getElementById("immagine").src= imm[0]
+            function randomIntFromInterval(min, max) { // min and max included 
+                return Math.floor(Math.random() * (max - min + 1) + min);
+            }
+
+            function carica()
+            {
+                indice = randomIntFromInterval(0,4)
+                alert(indice)
+                document.getElementById("immagine").src = imm[indice]
+            }
+
+            for (i=o; i<anim.length; i++){
+                if (document.getElementById("testo").value == anim[i]){
+                    punteggio=punteggio++
+                }
+                document.getElementById("punt").value=punteggio
+            }
+
+            function correggi(){
+                
+            }
+            
+            
            
 
 
 
         </script>
         <body>
-            <img id="immagine" width='140' height='140' src="">
+            Punteggio: <input type="punt" id="punt"></br>
+            <button type=button onclick="carica()">Carica Immagine</button>
+            <img id='immagine' width='140' height='140' src=''>
+
+            
+            <textarea id="testo" name="testo" rows="1" cols="10"></textarea>
         
         </body>
         </html>
@@ -40,5 +67,3 @@
 
 
 
-<button type=button onclick="cancella()">CANC</button>
-<textarea id="scontrino" name="scontrino" rows="40" cols="30"></textarea>

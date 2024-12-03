@@ -1,0 +1,69 @@
+<html lang="it" dir="ltr">
+    <head>
+        <meta charset="utf-8"> 
+        <title>Registratore di cassa</title>
+        <h1>Registratore di cassa</h1>
+        <style>
+            div{
+                width:20%;
+                display:inline-block;
+            }
+        </style>
+    </head>
+    <body>
+        <p> <img id='immagine' width='140' height='140' src=''> </p>
+        <div>  
+        
+         <div>Quantità<input type="text" id="quantità"></p>
+         <p><button type=button onclick="cancella()">CANC</button></div>
+        <div>   <h1>Scontrino</h1>
+            <textarea id="scontrino" name="scontrino" rows="40" cols="30"></textarea></div> 
+            <div><h1>Totale</h1> <hr>
+            Totale: <input type="text" id="totale"></br>
+            Totale con IVA (22%): <input type="text" id="totaleIVA"></a></br>
+            <button type=button onclick="fine()">FINE SPESA</button></div> 
+
+
+        
+    </body>
+        
+        <script>
+                
+            var sport=["Scherma"]
+            var imm=[ "https://www.poliziadistato.it/statics/17/pagina-scherma-550.jpg?art=1"]
+            var cal= [9]
+            var quantita=0, tot=0, x
+           
+            document.getElementById("immagine").innerHTML = imm[0]
+            for (i in arguments){
+                document.write()
+            }
+            
+            /*function seleziona(x){
+                quantita=parseInt(document.getElementById("quantità").value)
+                tot= tot + (prezzi[x]*quantita)
+                //document.getElementById("scontrino").value=prodotti[x]+quantita+prezzi[x]
+                document.getElementById("scontrino").value = document.getElementById("scontrino").value + prodotti[x] + " x" + quantita + " - " + prezzi[x] + "€\n";
+                
+                parseInt(document.getElementById("totale").value=tot)
+                
+                var iva= tot*0.22
+                parseInt(document.getElementById("totaleIVA").value=tot+iva)
+                
+            }
+
+            function cancella(){
+                document.getElementById("quantità").value = ""
+            }
+
+            function fine(){
+                alert("Pagamento in corso...\nAlla prossima!"
+                )
+            
+            }*/
+        
+        </script>
+        
+</html>
+
+
