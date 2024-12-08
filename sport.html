@@ -11,61 +11,64 @@
         </style>
     </head>
     <body>
-        <p> <a href="javascript:vedi()"> <img id="immagine" width='140' height='140' src=""></a>
+        <div>
+            <a href="javascript:seleziona(0)"> <img width='140' height='140' id='immagine' src=""></a>
             
-        <div>  
-        
-         <div>Quantità<input type="text" id="quantità"></p>
-         <p><button type=button onclick="cancella()">Azzera Registro</button></div>
-        <div>   <h1>Scontrino</h1>
-            <textarea id="scontrino" name="scontrino" rows="40" cols="30"></textarea></div> 
-            <div><h1>Totale</h1> <hr>
-            Totale: <input type="text" id="totale"></br>
-            Totale con IVA (22%): <input type="text" id="totaleIVA"></a></br>
-            <button type=button oncli
-
-
+        </div>
+        <div>
+            <h1>Durata:</h1> </br>
+            <input type="number" id="durata"></br>
+            <button type=button onclick="azzera()">Azzera Registro</button>
+        </div>
+        <div>
+            <h1>Registro Attività</h1>
+            <textarea id="registro" name="registro" rows="40" cols="30"></textarea>
+        </div>
+        <div>
+            <h1>Totale Calorie</h1>
+            <textarea id="totale" name="totale" rows="10" cols="30"></textarea>
+        </div>
         
     </body>
         
         <script>
                 
-            var sport=["Scherma"]
-            var imm=[ "https://www.poliziadistato.it/statics/17/pagina-scherma-550.jpg?art=1"]
-            var cal= [9]
+            var sport=["Scherma","Karate", "Nuoto", "Parkour"]
+            var imm=[ "https://www.poliziadistato.it/statics/17/pagina-scherma-550.jpg?art=1", "https://roppongi.fr/wp-content/uploads/karate.jpg", "https://www.albarella.it/wp-content/uploads/2021/02/nuoto1.jpg", "https://www.levissima.it/sites/site.prod1.levissima.it/files/imported_images/2016/09/ragazzi-saltano-parkour.jpg"]
+            var cal= [9.15, 11, 13, 17]
+            var tot=0;
             
-        
+            for(i in sport){
+                document.write ("<img src=" " + imm[i] + " width='140' height='140'> ")
+            }
+            document.getElementById('immagine').src=imm[0]
            
-            
-                var i=0
-            for (i in imm)
-                document.getElementById("immagine").src = imm[i]
+            function seleziona(x){
+                dur=parseInt(document.getElementById("durata").value)
+                tot= tot + (cal[0]*dur)
+                document.getElementById("registro").value = document.getElementById("registro").value + sport[0] + " - " + cal[0] + " x " + dur + "h\n" ;
+                var t=tot.toFixed(2)
+                parseInt(document.getElementById("totale").value=t)
                 
+            
+                
+            }
+            function azzera(){
+                document.getElementById("durata").value = ""
+            }
+            /*var i=0
+            for (i in imm)
+            {
+                
+                document.write('<img id="immagine" width="140" height="140" src=' + imm[i] + '></br>'+ sport[i])
+                //documennt.write('<br>')
+                //document.write(sport[i] + ' - calorie' + String.cal[i])
+                
+            }*/
             
         
             
-            /*function seleziona(x){
-                quantita=parseInt(document.getElementById("quantità").value)
-                tot= tot + (prezzi[x]*quantita)
-                //document.getElementById("scontrino").value=prodotti[x]+quantita+prezzi[x]
-                document.getElementById("scontrino").value = document.getElementById("scontrino").value + prodotti[x] + " x" + quantita + " - " + prezzi[x] + "€\n";
-                
-                parseInt(document.getElementById("totale").value=tot)
-                
-                var iva= tot*0.22
-                parseInt(document.getElementById("totaleIVA").value=tot+iva)
-                
-            }
-
-            function cancella(){
-                document.getElementById("quantità").value = ""
-            }
-
-            function fine(){
-                alert("Pagamento in corso...\nAlla prossima!"
-                )
-            
-            }*/
+        
         
         </script>
         
