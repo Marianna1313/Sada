@@ -1,0 +1,70 @@
+<html lang="it" dir="ltr">
+    <head>
+        <meta charset="utf-8"> 
+        <title>Cartella</title>
+        <h1>Cartella Tombola</h1>
+
+        </head>
+        <style>
+            table,tr, td{
+                border:2px;
+                border-style: double;
+                
+                
+            }
+            
+            
+        </style>
+        <script>
+            var num=[]
+            var nes
+
+            
+            function cartella(){
+                var i=0
+                do {
+                nes = Math.floor(Math.random() * 90)
+                if (controllo(num, nes)==false){
+                    num[i]=nes
+                    i++
+                }
+    
+                }while(i<15)
+                num.sort()
+            }
+
+            function controllo(ar,x) {
+                var trovato=false
+                for (var i=0; i<ar.lenght; i++){
+                    if (x=ar[i]){
+                        trovato=true
+                    }
+                }
+                return trovato
+            }
+            
+        </script>
+        <body>
+            <table>
+            <script>
+                var cont=1
+                for (var i=0;i<3;i++){
+                    document.write("<tr>")
+                        for (var j=0;j<9;j++){
+                            document.write("<td>") 
+                                for (var i=0; i<15; i++){
+                                    "id='"+ num[i]+ "'>"+num[i]
+                                }
+                            document.write("</td>")
+                            
+                            
+                        }
+                    document.write("</tr>")
+                }
+                
+            </script>
+            </table>
+
+            <button onclick="cartella()">Crea Cartella</button>
+            
+        </body>

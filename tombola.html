@@ -1,0 +1,71 @@
+<html lang="it" dir="ltr">
+    <head>
+        <meta charset="utf-8"> 
+        <title>tombola</title>
+        <h1>Tabellone Tombola</h1>
+
+        </head>
+        <style>
+            table,tr, td{
+                border:2px;
+                border-style: double;
+                
+            }
+            h1,h2{
+                text-align: center;
+            }
+            body{
+                text-align: center;
+            }
+            
+        </style>
+        <script>
+            var dim;
+            function estrairandom(){
+                var nes
+                var ar=[]
+                do{
+                    nes = Math.floor(Math.random() * 91)
+                }
+                while (ar.includes(nes))
+                    
+                ar[ar.length]=nes
+                document.getElementById("numero").innerHTML=nes
+                
+                var cella=document.getElementById(nes)
+                if (cella){
+                    cella.style.backgroundColor="green"
+                }
+                
+}
+            function reset(){
+                document.getElementById("numero").innerHTML="0"
+                ar=[]
+                for (var i=0; i<90;i++){
+                    var cella = document.getElementById(i);
+                    if(cella){
+                        cella.style.backgroundColor="white"
+                    }
+                }
+            }
+        </script>
+        <body>
+            <table text-align: center>
+            <script>
+                var cont=1
+                for (var i=0;i<10;i++){
+                    document.write("<tr>")
+                        for (var j=0;j<9;j++){
+                            document.write("<td id='"+ cont+ "'>"+cont+"</td>")
+                            cont++ 
+                        }
+                    document.write("</tr>")
+                }
+                
+            </script>
+            </table>
+
+            <button onclick="estrairandom()">Estrai numero</button>
+            <h2 id="numero"></h2>
+            <button onclick="reset()">Reset</button>
+        </body>

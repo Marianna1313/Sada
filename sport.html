@@ -9,44 +9,21 @@
                 display:inline-block;
             }
         </style>
-    </head>
-    <body>
-        <div>
-            <a href="javascript:seleziona(0)"> <img width='140' height='140' id='immagine' src=""></a>
-            
-        </div>
-        <div>
-            <h1>Durata:</h1> </br>
-            <input type="number" id="durata"></br>
-            <button type=button onclick="azzera()">Azzera Registro</button>
-        </div>
-        <div>
-            <h1>Registro Attività</h1>
-            <textarea id="registro" name="registro" rows="40" cols="30"></textarea>
-        </div>
-        <div>
-            <h1>Totale Calorie</h1>
-            <textarea id="totale" name="totale" rows="10" cols="30"></textarea>
-        </div>
+    </head>        
         
-    </body>
-        
+        </script>
         <script>
-                
-            var sport=["Scherma","Karate", "Nuoto", "Parkour"]
-            var imm=[ "https://www.poliziadistato.it/statics/17/pagina-scherma-550.jpg?art=1", "https://roppongi.fr/wp-content/uploads/karate.jpg", "https://www.albarella.it/wp-content/uploads/2021/02/nuoto1.jpg", "https://www.levissima.it/sites/site.prod1.levissima.it/files/imported_images/2016/09/ragazzi-saltano-parkour.jpg"]
-            var cal= [9.15, 11, 13, 17]
-            var tot=0;
-            
-            for(i in sport){
-                document.write ("<img src=" " + imm[i] + " width='140' height='140'> ")
+
+        
+            /*for(i in sport){
+                document.write ("<img src="  + imm[i] + " width='140' height='140'> ")
             }
-            document.getElementById('immagine').src=imm[0]
+            document.getElementById('immagine').src=imm[0]*/
            
             function seleziona(x){
                 dur=parseInt(document.getElementById("durata").value)
-                tot= tot + (cal[0]*dur)
-                document.getElementById("registro").value = document.getElementById("registro").value + sport[0] + " - " + cal[0] + " x " + dur + "h\n" ;
+                tot= tot + (cal[x]*dur)
+                document.getElementById("registro").value = document.getElementById("registro").value + sport[x] + " - " + cal[x] + " x " + dur + "h\n" ;
                 var t=tot.toFixed(2)
                 parseInt(document.getElementById("totale").value=t)
                 
@@ -71,6 +48,43 @@
         
         
         </script>
+        <body>
+       <table >
+        <tr>
+            <td valign="top">
+                <script>
+                
+                    var sport=["Scherma","Karate", "Nuoto", "Parkour"]
+                    var imm=[ "https://www.poliziadistato.it/statics/17/pagina-scherma-550.jpg?art=1", "https://roppongi.fr/wp-content/uploads/karate.jpg", "https://www.albarella.it/wp-content/uploads/2021/02/nuoto1.jpg", "https://www.levissima.it/sites/site.prod1.levissima.it/files/imported_images/2016/09/ragazzi-saltano-parkour.jpg"]
+                    var cal= [9.15, 11, 13, 17]
+                    var tot=0;
+                    
+                    for(i in sport){
+                    
+                    document.write(" <img src='"+imm[i]+"'  width='80' onclick='seleziona("+i+")'>")
+                    document.write("<br>"+sport[i]+" - "+cal[i]+" cal/min<br><br>")
+         
+                }
+                </script>
+            </td>
+            <td valign="top">
+                <h1>Durata:</h1> </br>
+                <input type="number" id="durata"></br>
+                <button type=button onclick="azzera()">Azzera Registro</button>
+            </td>
+            <td valign="top">
+                <h1>Registro Attività</h1>
+                <textarea id="registro" name="registro" rows="40" cols="30"></textarea>
+            </td>
+            <td valign="top">
+                <h1>Totale Calorie</h1>
+                <textarea id="totale" name="totale" rows="10" cols="30"></textarea>
+            </td>
+        </tr>
+        </table>
+        
+                
+        </body>
         
 </html>
 
