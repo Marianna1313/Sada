@@ -6,12 +6,7 @@
 
         </head>
         <style>
-            table,tr, td{
-                border:2px;
-                border-style: double;
-                
-                
-            }
+            
             
             
         </style>
@@ -20,23 +15,33 @@
             var nes
 
             
-            function cartella(){
+            
                 var i=0
+               for (let j=0; j<15;j++ )
+               {
                 do {
                 nes = Math.floor(Math.random() * 90)
-                if (controllo(num, nes)==false){
+               /* if (controllo(num, nes)==false){
                     num[i]=nes
                     i++
                 }
-    
-                }while(i<15)
-                num.sort()
+    */
+                    var x=num.indexOf(nes);
+                }while(x!=-1)
+                i++;
+                num[i]=nes;
             }
+            numberSort = function (a,b) { //funzione cercata su goggle perchè non funzionava sort 
+                return a - b;
+            }
+                num.sort(numberSort)
+                alert(num);
+            
 
             function controllo(ar,x) {
                 var trovato=false
                 for (var i=0; i<ar.lenght; i++){
-                    if (x=ar[i]){
+                    if (x==ar[i]){
                         trovato=true
                     }
                 }
@@ -45,21 +50,27 @@
             
         </script>
         <body>
-            <table>
+            <table border=2px>
             <script>
-                var cont=1
+                var cont=0;
+                
                 for (var i=0;i<3;i++){
                     document.write("<tr>")
-                        for (var j=0;j<9;j++){
+                        
+                        for (var j=0;j<5;j++){
+                           //console.log(num[cont]);
                            
-                                /*for (var i=0; i<15; i++){
-                                    "id='"+ num[i]+ "'>"+num[i]
-                                }*/
-                            document.write("<td id='"+ cont+ "'>"+cont+"</td>")
+                            document.write("<td>"+num[cont]+"</td>")
+                            cont++;
+                           
+                               
+                            //document.write("<td id='"+ cont+ "'>"+cont+"</td>")
                             
                             
                         }
+                        
                     document.write("</tr>")
+                    
                 }
                 
             </script>
@@ -68,3 +79,5 @@
             <button onclick="cartella()">Crea Cartella</button>
             
         </body>
+
+        metterli su 5, colore giallo onclick, switch per ambo ecc
