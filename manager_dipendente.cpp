@@ -44,6 +44,11 @@ class Dipendente {
         void visualizza (){
             cout <<"Il bonus del manager: " << bonus << " e ha " << numeroDipendenti<< " dipendenti " <<endl;
         }
+        void q_supervisionati (int p){
+            if (numeroDipendenti>=10){
+
+            }
+        }
     };
 
 
@@ -51,7 +56,7 @@ int main(){
     string n;
     double s;
     double b,g=0,bs;
-    int nd;
+    int nd, per;
     
     
     cout << "Inserisci il nome: ";
@@ -72,5 +77,7 @@ int main(){
     cin >> nd;
     manager y = manager (n, s, bs, nd);
     y.visualizza();
+    cout << "Se il manager supervisiona più di 10 dipendenti, di quanto va aumentato il bonus? ";
+    cin >> per;
 
     }

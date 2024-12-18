@@ -1,0 +1,40 @@
+<html lang="it" dir="ltr">
+    <head>
+        <meta charset="utf-8"> 
+        <title>tris</title>
+        <h1>Tris</h1>
+        <script>
+            function inserisci (n){
+               var idd= document.getElementById("num").value
+               var cont=0;
+               for (var i=0; i<10;i++){
+                   cont++
+                   if (idd==cont){
+                       document.getElementById(""+cont+"")=n
+                   }
+               }
+            }
+       </script>
+        <table border="10px">
+        <script>
+            var cont=1;
+           for (var i=0; i<3; i++){
+            document.write ("<tr>")
+            for (var j=0; j<3; j++){
+                document.write ("<td id="+cont+"></td>")
+                cont++;
+        }
+        document.write ("</tr>")
+           }
+           
+           
+        </script>
+        </table>
+        
+    </head>
+    <body>
+        <input type="text" id="num">
+        <button onclick="javascript:inserisci('X')">X</button>
+        <button onclick="javascript:inserisci('O')">O</button>
+    </body>
+</html>
