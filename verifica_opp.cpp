@@ -43,7 +43,7 @@ class veicolo{
         }
         void mostraDettagli(){
             mostraDettagli();
-            if (hb==true){
+            if (haBaule==true){
                 cout << " ha il bauletto";
             }else{
                 cout << " non ha il bauletto";

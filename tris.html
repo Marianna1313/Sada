@@ -4,24 +4,39 @@
         <title>tris</title>
         <h1>Tris</h1>
         <script>
-            function inserisci (n){
-               var idd= document.getElementById("num").value
-               var cont=0;
-               for (var i=0; i<10;i++){
-                   cont++
-                   if (idd==cont){
-                       document.getElementById(""+cont+"")=n
-                   }
+            function inseriscicerchio (b){
+                var idd=0;
+               var a=true
+               idd= document.getElementById("num").value
+               if(b=='O'){
+                document.getElementById(idd)='O'
+               } 
+                   
+                   
+               
+            }
+            function inserisciics (b){
+               var idd=0;
+               var a=true
+               idd= document.getElementById("num").value
+               if(b=='X'){
+                document.getElementById(idd)='X'
                }
+               
+                  
+                       
+                   
+                   
+               
             }
        </script>
-        <table border="10px">
+       <!-- <table border="10px">
         <script>
             var cont=1;
            for (var i=0; i<3; i++){
             document.write ("<tr>")
             for (var j=0; j<3; j++){
-                document.write ("<td id="+cont+"></td>")
+                document.write ("<td id="+ cont +"></td>")
                 cont++;
         }
         document.write ("</tr>")
@@ -29,12 +44,24 @@
            
            
         </script>
-        </table>
+        </table>-->
+
+        <textarea type="input" id="1"></textarea>
+        <textarea type="input" id="2"></textarea>
+        <textarea type="input" id="3"></textarea>
+        <br></br>
+        <textarea type="input" id="4"></textarea>
+        <textarea type="input" id="5"></textarea>
+        <textarea type="input" id="6"></textarea>
+        <br></br>
+        <textarea type="input" id="7"></textarea>
+        <textarea type="input" id="8"></textarea>
+        <textarea type="input" id="9"></textarea>
         
     </head>
     <body>
         <input type="text" id="num">
-        <button onclick="javascript:inserisci('X')">X</button>
-        <button onclick="javascript:inserisci('O')">O</button>
+        <button  type="button" onclick="inserisciics('X')">X</button>
+        <button type="button" onclick="inseriscicerchio('O')">O</button>
     </body>
 </html>
