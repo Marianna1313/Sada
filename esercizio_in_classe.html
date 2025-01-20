@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <script>
+        function cambiaparagrafo(og){
+            og.innerHTML="Youssef"; //capisce da solo che sarebbe document.getelementbyid.  this rende la funzione un po' più generica, e adesso c'è un paramentro
+        }
+
+        function cambiacontenuto(og){
+            og.value="Hai cambiato il contenuto";
+        }
+
+        function vedinome(og){
+            document.getElementById("vedi").value=og.value;
+        }
+    </script>
+    </head>
+    <body>
+        <p id="prg1" onclick="cambiaparagrafo(this)">Questo è un paragrafo</p>
+        <p id="prg2" onclick="cambiaparagrafo(this)">Questo è un paragrafo</p>
+        Vedi informazioni:
+        <input type="text" id="vedi" onchange="cambiacontenuto(this)">
+        <br><br>Inserisci i tuoi dati:
+        <br>Nome:<input type="text" id="nome" onchange="vedinome(this)">
+    </body>
+</html>
