@@ -1,14 +1,34 @@
 <html>
     <head>
         <script>
-            cambioimm(){
-                document.getElementById()
+            function cambioimm(og){
+                if(og.src.includes("gat.jpg")){
+                    og.src="can.png";
+                }else{
+                    og.src="gat.jpg";
+                }  
+            }
+            function mousesopra(og){
+                og.innerHTML="Sei un grande";
+                og.style.backgroundColor="red";
+            }
+            function mousefuori(og){
+                og.innerHTML="Passa il mouse per vedere un messaggio";
+                og.style.backgroundColor="transparent";
+            }
+            function mousesotto(og){
+                og.style.backgroundColor="green";
+                og.innerHTML="Cliccato";
             }
         </script>
     </head>
     <body>
         <h1>Interagisci con gli animali!</h1>
         <h2>1. Doppio click sull'immagine per cambiarla</h2>
-        <img id="imgg" src="gat.jpg" width='140' height='140' dblclick>
+        <img id="imgg" src="gat.jpg" width='140' height='140' ondblclick="cambioimm(this)">
+        <h2>2. Passa il mouse sul paragrafo</h2>
+        <p id="pr1" onmouseover="mousesopra(this)" onmouseout="mousefuori(this)">Passa il mouse per vedere un messaggio</p>
+        <h2>3. Premi il pulsante</h2>
+        <button type="button" onmousedown="mousesotto(this)">Cliccami</button>
     </body>
 </html>
