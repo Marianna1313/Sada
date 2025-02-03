@@ -3,29 +3,38 @@
 <head>
     <script>
         function cambia_imm(og){
-            og.src="singola.png";
-                 
+            og.src="singola.png";    
+        }
+        function torna(og){
+            og.src="doppia.png";
         }
         var arr=[50,80,120];
         var tot=0;
         function radio(og){
             var x=arr[og];
             tot=(x*document.getElementById("nntt").value);
+            document.getElementById("prz").innerHTML=tot;
             
-            tot=document.getElementById(prz);
 
         }
         var ar=[10,5];
         function check(og){
             var y=ar[og];
             tot=tot+y;
-            document.getElementById(prz).innerHTML=tot;
+            document.getElementById("prz").innerHTML=tot;
+        }
+        function prenota(){
+            alert("Hai prenotato all'hotel " + document.getElementById("nome").value + " con un totale di " + tot)
+        }
+        function reset(){
+
         }
     </script>
 </head>
 <body>
+    <form>
     <h1>Prenotazione hotel</h1>
-    Nome:<input type="text"></input></br>
+    Nome:<input type="text" id="nome"></input></br>
     Numero di notti:<input type="text" id="nntt"></input>
     <table>
         <tr>
@@ -43,9 +52,12 @@
         </tr>
         
     </table>
-    <img width="200" height="200" onmouseover="cambia_imm(this)" src="doppia.png">
+    <img width="200" height="200" onmouseover="cambia_imm(this)" onmouseout="torna(this)" src="doppia.png">
     <h2>Prezzo totale:</h2><h2 id="prz"></h2>
-    <button type="button">Prenota</button>
-    <button type="button">Reset</button>
+    <button type="button" onclick="prenota()">Prenota</button>
+    <input type="reset"></input>
+    
+    </form>
+
 </body>
 </html>
