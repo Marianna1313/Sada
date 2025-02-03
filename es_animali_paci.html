@@ -20,6 +20,18 @@
                 og.style.backgroundColor="green";
                 og.innerHTML="Cliccato";
             }
+            function info_selezionate(og){
+                var x=og.value;
+                document.getElementById("infos").innerHTML=document.getElementById("infos").innerHTML+ " "+ x;
+            }
+            function info2_selezionate(og){
+                var x=og.value;
+                document.getElementById("infos").innerHTML=document.getElementById("infos").innerHTML+ " "+ x;
+            }
+            function info3_selezionate(og){
+                var x=og.value;
+                document.getElementById("infos").innerHTML=document.getElementById("infos").innerHTML+ " "+ x;
+            }
         </script>
     </head>
     <body>
@@ -31,13 +43,22 @@
         <h2>3. Premi il pulsante</h2>
         <button type="button" onmousedown="mousesotto(this)">Cliccami</button></br>
         <h2>4. Seleziona il tuo animale preferito:</h2>
-        <select id="sele" onchange="info_selezionate()">
-            <option>Elefante</option>
-            <option>Delfino</option>
-            <option>Piccione</option>
-            <option>Giraffa</option>
+        <select id="sele" onchange="info_selezionate(this)">
+            <option value="Elefante">Elefante</option>
+            <option value="Delfino">Delfino</option>
+            <option value="Piccione">Piccione</option>
+            <option value="Giraffa">Giraffa</option>
         </select>
         <h2>5. Scegli la tua categoria preferita:</h2>
-        
+        <input type="radio" name="carola" value="Domestico" onclick="info2_selezionate(this)">Domestico</input></br>
+        <input type="radio" name="carola" value="Selvaggio" onclick="info2_selezionate(this)">Selvaggio</input></br>
+        <input type="radio" name="carola" value="Esotico" onclick="info2_selezionate(this)">Esotico</input></br>
+        <h2>6. Quali possiedi:</h2>
+        <input type="checkbox" value= "Elefante" onclick="info3_selezionate(this)">Elefante</input></br>
+        <input type="checkbox" value= "Delfino" onclick="info3_selezionate(this)">Delfino</input></br>
+        <input type="checkbox" value= "Piccione" onclick="info3_selezionate(this)">Piccione</input></br>
+        <input type="checkbox" value= "Giraffa" onclick="info3_selezionate(this)">Giraffa</input></br>
+        <h2>7. Informazioni selezionate:</h2>
+        <textarea id="infos"></textarea>
     </body>
 </html>

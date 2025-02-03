@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function cambia_imm(og){
+            og.src="singola.png";
+                 
+        }
+        var arr=[50,80,120];
+        var tot=0;
+        function radio(og){
+            var x=arr[og];
+            tot=(x*document.getElementById("nntt").value);
+            
+            tot=document.getElementById(prz);
+
+        }
+        var ar=[10,5];
+        function check(og){
+            var y=ar[og];
+            tot=tot+y;
+            document.getElementById(prz).innerHTML=tot;
+        }
+    </script>
+</head>
+<body>
+    <h1>Prenotazione hotel</h1>
+    Nome:<input type="text"></input></br>
+    Numero di notti:<input type="text" id="nntt"></input>
+    <table>
+        <tr>
+            <td>
+                <h2>Camera:</h2>
+                <input type="radio" name="carola" value="50" onclick="radio(0)">Singola (€50/notte)</input></br>
+                <input type="radio" name="carola" value="80" onclick="radio(1)">Doppia (€80/notte)</input></br>
+                <input type="radio" name="carola" value="120" onclick="radio(2)">Suite (€120/notte)</input></br>
+            </td>
+            <td>
+                <h2>Extra:</h2>
+                <input type="checkbox" onclick="check(0)">Colazione inclusa (+10€/notte)</input></br>
+                <input type="checkbox" onclick="check(1)">Parcheggio (+5€/notte)</input></br>
+            </td>
+        </tr>
+        
+    </table>
+    <img width="200" height="200" onmouseover="cambia_imm(this)" src="doppia.png">
+    <h2>Prezzo totale:</h2><h2 id="prz"></h2>
+    <button type="button">Prenota</button>
+    <button type="button">Reset</button>
+</body>
+</html>

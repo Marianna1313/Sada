@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h1{
+            color:lightblue;
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+<body onload="nuova_operazioni()">
+    <h1>🧠 Gioco di calcolo mentale ♾️</h1>
+    Rispondi più velcomente possibile!</br>
+    <table>
+        <tr>
+           <td><h3 id="n1"></h3></td> 
+           <td><h3 id="op"></h3></td>
+           <td><h3 id="n2"></h3></td>
+           <td>=</td>
+           <td><input type="text" id="ris"></input></td>
+        </tr>
+    </table>
+    <button type="button" onclick="verifica()">✅ verifica</button>
+    <button type="button" onclick="nuova_operazioni()">🔁 nuova operazione</button>
+    <h3 id="punt">Punteggio</h3>
+    
+    <script>
+        var operazioni = ["+","-","*","/"]; 
+        var n1,n2,op;
+
+        function nuova_operazioni(){
+            
+        n1= Math.floor(Math.random() * 10) + 1;
+        n2= Math.floor(Math.random() * 10) + 1;
+        op= Math.floor(Math.random() * 4);
+        document.getElementById("n1").innerHTML = n1;
+        document.getElementById("n2").innerHTML = n2;
+        document.getElementById("op").innerHTML = operazioni[op];
+        }
+        
+        var punt=0;
+        function verifica(){
+            if(op==0){
+                if(document.getElementById("ris").value==n1+n2){
+                    punt=punt+10;
+                    document.getElementById("punt").innerHTML=punt;
+                }else{
+                    punt=punt-5;
+                    document.getElementById("punt").innerHTML=punt;
+                }
+            }else if(op==1){
+                if(document.getElementById("ris").value==n1-n2){
+                    punt=punt+10;
+                    document.getElementById("punt").innerHTML=punt;
+                }else{
+                    punt=punt-5;
+                    document.getElementById("punt").innerHTML=punt;
+                }
+            }else if(op==2){
+                if(document.getElementById("ris").value==n1*n2){
+                    punt=punt+10;
+                    document.getElementById("punt").innerHTML=punt;
+                }else{
+                    punt=punt-5;
+                    document.getElementById("punt").innerHTML=punt;
+                }
+            }else if (op==3){
+                if(document.getElementById("ris").value==n1/n2){
+                    punt=punt+10;
+                    document.getElementById("punt").innerHTML=punt;
+                }else{
+                    punt=punt-5;
+                    document.getElementById("punt").innerHTML=punt;
+                }
+            }
+            
+        }
+        
+    </script>
+    
+    
+
+</body</script>>
+</html>
