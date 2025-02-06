@@ -1,0 +1,88 @@
+<html>
+	<head>
+		<script>
+			function numlezioni(og){
+				if (og.value<0){
+				alert("Il numero di lezioni non può essere un numero negativo");
+				document.getElementById("nlez").value=0;
+				}
+			}
+			var immg=["calcio.jpg", "nuoto.jpg", "tennis.jpg"]
+			function cambioimm(og){
+				document.getElementById("img").src=immg[og];
+			}
+			function sopraimm(og){
+				if (og==immg[0]){
+				alert("Stai guardando una foto di Calcio");
+				}
+				else if (og.src==immg[1]){
+				alert("Stai guardando una foto di Nuoto");
+				}
+				else if (og.src==immg[2]){
+				alert("Stai guardando una foto di Tennis");
+				}
+            }
+			function grattavinci(){
+				var x;
+				x=Math.floor(1*10)+1;
+				alert(x);
+				document.getElementById("ncas").value=x;
+			}
+			var tot=0;
+			var prezzilez=["20", "30", "25"];
+			
+			/*function calcola(){
+				if(document.getElementById("nome").value==0){
+				tot=0;
+				document.getElementById("tot").inneHTML=tot;
+				}
+				else{
+					if(document.getElementById("ncas").value<7){
+						if(document.getElementById("sport").value==0){
+						tot=document.getElementById("nlez").value*prezzilez[0]*()
+						}
+					}
+				}
+                    }
+			}*/
+			
+		</script>
+	</head>
+	<body>
+		<h1>Calcolo costo del corso e prenotazione</h1>
+		
+		<table>
+			<tr>
+				<td>
+				Nome:<input type="text" id="nome">
+				</td>
+				<td>
+				Numero di lezioni:<input type="text" id="nlez" onchange="numlezioni(this)">
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<h2>Scegli uno sport:</h2>
+				<input type="radio" name="sport" value="0" onclick="cambioimm(0)">Calcio (20€/lezione)</input></br>
+				<input type="radio" name="sport" value="2" onclick="cambioimm(2)">Tennis (25€/lezione)</input></br>
+				<input type="radio" name="sport" value="1" onclick="cambioimm(1)">Nuoto (30€/lezione)</input></br>
+				</td>
+				<td>
+				<img width="150" height="120" id="img" src="calcio.jpg" onmouseover="sopraimm(this)">
+				</td>
+			</tr>
+			<tr>
+			<td>
+			<h3>Extra:</h3>
+			</td>
+			<td>
+			<input type="checkbox">Personal traine (+10€/lezione)</input>
+			</td>
+			</tr>
+		</table>
+		<button type="button" id="gratta" onclick="grattavinci()" >Gratta e vinci</button>
+		<input type="text" id="ncas"></input></br></br>
+		<button type="button" onclick="calcola()">Calcola costo e prenota</button></br>
+		<h2>Totale: €</h2><h2 id="tot"></h2>
+	</body>
+</html>
