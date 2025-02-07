@@ -1,39 +1,47 @@
 <html>
 	<head>
 		<script>
+			var immg=["calcio.jpg", "nuoto.jpg", "tennis.jpg"]
+			var sportselezionato="calcio.jpg";
+			var tot=0;
 			function numlezioni(og){
 				if (og.value<0){
 				alert("Il numero di lezioni non può essere un numero negativo");
 				document.getElementById("nlez").value=0;
 				}
 			}
-			var immg=["calcio.jpg", "nuoto.jpg", "tennis.jpg"]
-			function cambioimm(og){
-				document.getElementById("img").src=immg[og];
+			
+			function cambioimm(x,og){
+
+				document.getElementById("img").src=immg[x];
+				sportselezionato=immg[x];
 			}
-			function sopraimm(og){
-				if (og==immg[0]){
-				alert("Stai guardando una foto di Calcio");
-				}
-				else if (og.src==immg[1]){
-				alert("Stai guardando una foto di Nuoto");
-				}
-				else if (og.src==immg[2]){
-				alert("Stai guardando una foto di Tennis");
-				}
+			function sopraimm(){
+			
+				alert("Stai guardando una foto di " + sportselezionato);
+				
             }
 			function grattavinci(){
 				var x;
-				x=Math.floor(1*10)+1;
-				alert(x);
+				x=Math.floor(Math.random() * 10) + 1;
+				//alert(x);
 				document.getElementById("ncas").value=x;
 			}
-			var tot=0;
+			
 			var prezzilez=["20", "30", "25"];
 			
-			/*function calcola(){
-				if(document.getElementById("nome").value==0){
+			function calcola(){
+				if(document.getElementById("nome")==""){
+					alert("Impossibile prenotare senza nome");
+					document.getElementById("tot").=0;
+				}	
+
+
+
+			}
+				/*if(document.getElementById("nome").value==0){
 				tot=0;
+
 				document.getElementById("tot").inneHTML=tot;
 				}
 				else{
@@ -44,7 +52,7 @@
 					}
 				}
                     }
-			}*/
+			*/
 			
 		</script>
 	</head>
@@ -63,9 +71,9 @@
 			<tr>
 				<td>
 				<h2>Scegli uno sport:</h2>
-				<input type="radio" name="sport" value="0" onclick="cambioimm(0)">Calcio (20€/lezione)</input></br>
-				<input type="radio" name="sport" value="2" onclick="cambioimm(2)">Tennis (25€/lezione)</input></br>
-				<input type="radio" name="sport" value="1" onclick="cambioimm(1)">Nuoto (30€/lezione)</input></br>
+				<input type="radio" name="sport" value="0" onclick="cambioimm(0, this)">Calcio (20€/lezione)</input></br>
+				<input type="radio" name="sport" value="2" onclick="cambioimm(2, this)">Tennis (25€/lezione)</input></br>
+				<input type="radio" name="sport" value="1" onclick="cambioimm(1, this)">Nuoto (30€/lezione)</input></br>
 				</td>
 				<td>
 				<img width="150" height="120" id="img" src="calcio.jpg" onmouseover="sopraimm(this)">
@@ -76,7 +84,7 @@
 			<h3>Extra:</h3>
 			</td>
 			<td>
-			<input type="checkbox">Personal traine (+10€/lezione)</input>
+			<input type="checkbox">Personal trainer (+10€/lezione)</input>
 			</td>
 			</tr>
 		</table>
