@@ -28,15 +28,18 @@
 				document.getElementById("ncas").value=x;
 			}
 			
-			var prezzilez=["20", "30", "25"];
+			//var prezzilez=["20", "30", "25"];
 			
 			function calcola(){
-				if(document.getElementById("nome")==""){
+				if(document.getElementById("nome").value==""){
 					alert("Impossibile prenotare senza nome");
-					document.getElementById("tot").=0;
-				}	
+					document.getElementById("tot").innerHTML="0";
+				}else{
+					alert("Prenotazione effettuata");
+				}
 
-
+				tot= document.getElementById("nlez").value* document.getElementsByName("sport").value;
+				alert(tot);
 
 			}
 				/*if(document.getElementById("nome").value==0){
@@ -71,9 +74,9 @@
 			<tr>
 				<td>
 				<h2>Scegli uno sport:</h2>
-				<input type="radio" name="sport" value="0" onclick="cambioimm(0, this)">Calcio (20€/lezione)</input></br>
-				<input type="radio" name="sport" value="2" onclick="cambioimm(2, this)">Tennis (25€/lezione)</input></br>
-				<input type="radio" name="sport" value="1" onclick="cambioimm(1, this)">Nuoto (30€/lezione)</input></br>
+				<input type="radio" name="sport" value="20" onclick="cambioimm(0, this)">Calcio (20€/lezione)</input></br>
+				<input type="radio" name="sport" value="25" onclick="cambioimm(2, this)">Tennis (25€/lezione)</input></br>
+				<input type="radio" name="sport" value="30" onclick="cambioimm(1, this)">Nuoto (30€/lezione)</input></br>
 				</td>
 				<td>
 				<img width="150" height="120" id="img" src="calcio.jpg" onmouseover="sopraimm(this)">
@@ -91,6 +94,6 @@
 		<button type="button" id="gratta" onclick="grattavinci()" >Gratta e vinci</button>
 		<input type="text" id="ncas"></input></br></br>
 		<button type="button" onclick="calcola()">Calcola costo e prenota</button></br>
-		<h2>Totale: €</h2><h2 id="tot"></h2>
+		<h2>Totale: </h2><h2 id="tot">€</h2>
 	</body>
 </html>
