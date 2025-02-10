@@ -3,7 +3,8 @@
 		<script>
 			var immg=["calcio.jpg", "nuoto.jpg", "tennis.jpg"]
 			var sportselezionato="calcio.jpg";
-			var tot=0;
+			var tot=0, lezioni=20;
+			var x=0;
 			function numlezioni(og){
 				if (og.value<0){
 				alert("Il numero di lezioni non può essere un numero negativo");
@@ -15,6 +16,8 @@
 
 				document.getElementById("img").src=immg[x];
 				sportselezionato=immg[x];
+				lezioni=og.value;
+				
 			}
 			function sopraimm(){
 			
@@ -22,7 +25,7 @@
 				
             }
 			function grattavinci(){
-				var x;
+				
 				x=Math.floor(Math.random() * 10) + 1;
 				//alert(x);
 				document.getElementById("ncas").value=x;
@@ -31,31 +34,27 @@
 			//var prezzilez=["20", "30", "25"];
 			
 			function calcola(){
+				//alert (x);
+				//alert(lezioni);
 				if(document.getElementById("nome").value==""){
 					alert("Impossibile prenotare senza nome");
 					document.getElementById("tot").innerHTML="0";
 				}else{
 					alert("Prenotazione effettuata");
 				}
-
-				tot= document.getElementById("nlez").value* document.getElementsByName("sport").value;
+		
+				tot= parseInt(lezioni) * parseInt(document.getElementById("nlez").value);
 				alert(tot);
+				if(document.getElementById("check").checked){
+					tot= parseInt(tot) + (10 * parseInt(document.getElementById("nlez").value));
+				}
 
+				if (x>=7){
+					tot= parseInt(tot)*50/100;
+				}
+				document.getElementById("tot").innerHTML=tot;
 			}
-				/*if(document.getElementById("nome").value==0){
-				tot=0;
-
-				document.getElementById("tot").inneHTML=tot;
-				}
-				else{
-					if(document.getElementById("ncas").value<7){
-						if(document.getElementById("sport").value==0){
-						tot=document.getElementById("nlez").value*prezzilez[0]*()
-						}
-					}
-				}
-                    }
-			*/
+				
 			
 		</script>
 	</head>
@@ -68,7 +67,7 @@
 				Nome:<input type="text" id="nome">
 				</td>
 				<td>
-				Numero di lezioni:<input type="text" id="nlez" onchange="numlezioni(this)">
+				Numero di lezioni:<input type="text" value="0" id="nlez" onchange="numlezioni(this)">
 				</td>
 			</tr>
 			<tr>
@@ -87,7 +86,7 @@
 			<h3>Extra:</h3>
 			</td>
 			<td>
-			<input type="checkbox">Personal trainer (+10€/lezione)</input>
+			<input type="checkbox" id="check">Personal trainer (+10€/lezione)</input>
 			</td>
 			</tr>
 		</table>
