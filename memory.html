@@ -1,11 +1,19 @@
 <html>
     <head>
         <script>
-            var ar=["rasperry.jpg", "pear.jpg", "orange.jpg", "lemon.jpg", "grape.jpg", "cherry.jpg", "banana.jpg", "apple.jpg"]
-            function random(){
-            x=Math.floor(Math.random() * 7);
+            var x=0;
+            var ar=["rasperry.jpg", "pear.jpg", "orange.jpg", "lemon.jpg", "grape.jpg", "cherry.jpg", "banana.jpg", "apple.jpg"];
+            //var contat=[cont, cont, cont, cont, cont, cont, cont, cont];
+            function random(og){
+                //for(var i=0;i<=16;i++){
+                    x=Math.floor(Math.random() * 7);
+                    alert(x);
+                    
+                    document.getElementById(og.id).src=ar[x];
+                //}
+            
         
-            document.getElementById("img").src=ar[x];
+            
             }
         </script>
 </head>
@@ -14,10 +22,10 @@
     <h3>Trova le coppie di frutta</h3>
     <table>
     <tr>
-    <td><img src="https://www.sirvisual.it/Attachment/100/2094_26884_80-012%20Principale.jpg" width="200" id="img1"></td>
-    <td><img src="https://www.sirvisual.it/Attachment/100/2094_26884_80-012%20Principale.jpg" width="200" id="img2"></td>
-    <td><img src="https://www.sirvisual.it/Attachment/100/2094_26884_80-012%20Principale.jpg" width="200" id="img3"></td>
-    <td><img src="https://www.sirvisual.it/Attachment/100/2094_26884_80-012%20Principale.jpg" width="200" id="img4"></td>
+    <td><img src="https://www.sirvisual.it/Attachment/100/2094_26884_80-012%20Principale.jpg" width="200" id="img1" onclick="random(this)"></td>
+    <td><img src="https://www.sirvisual.it/Attachment/100/2094_26884_80-012%20Principale.jpg" width="200" id="img2" onclick="random(this)"></td>
+    <td><img src="https://www.sirvisual.it/Attachment/100/2094_26884_80-012%20Principale.jpg" width="200" id="img3" onclick="random(this)"></td>
+    <td><img src="https://www.sirvisual.it/Attachment/100/2094_26884_80-012%20Principale.jpg" width="200" id="img4" onclick="random(this)"></td>
     </tr>
     <tr>
     <td><img src="https://www.sirvisual.it/Attachment/100/2094_26884_80-012%20Principale.jpg" width="200" id="img5"></td>
